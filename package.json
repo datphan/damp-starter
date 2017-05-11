@@ -1,7 +1,7 @@
 {
   "name": "docker-apache-mysql-php-starter",
   "version": "1.0.0",
-  "description": "Docker with Apacha Mysql Php pre-installed",
+  "description": "Docker LAMP stack",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

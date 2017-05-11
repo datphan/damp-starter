@@ -1,5 +1,9 @@
 FROM php:7.0-apache
 
-COPY ./php.ini /usr/local/etc/php/
+ENV APP /var/www/html
 
-COPY ./src /var/www/html
+RUN docker-php-ext-install mysqli
+
+RUN a2enmod rewrite
+
+ADD ./php.ini /usr/local/etc/php/php.ini

@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  mysqldb:
+    image: "mysql:latest"
+    ports:
+      - "6603:3306"
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+
+  dev:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+
+    environment:
+      VIRTUAL_HOST: damp.acme.dev
+
+    depends_on:
+      - mysqldb
+
+    

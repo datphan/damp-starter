@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  prod:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+
+    environment:
+      VIRTUAL_HOST: damp.acme.prod
+
+    depends_on:
+      - mysqldb
+
+    

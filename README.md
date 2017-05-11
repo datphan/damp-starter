@@ -11,7 +11,7 @@ Then go to `localhost` and enjoy!
 
 *Note*: for those who use `nginx` insted of `apache`, check out [demp-starter](https://github.com/acme101/demp-starter).
 
-## Higher
+## Higher Usage
 
 ```
 $ cd ~/
@@ -38,6 +38,7 @@ Then:
 
 ```
 $ vagrant up
+$ vagrant hostmanager
 ```
 
 **On new terminal window**
@@ -48,7 +49,7 @@ $ cd workspace/damp-starter
 $ docker-compose up -d
 ```
 
-Open dev.damp.acme.dev (http + https modes) to check it out.
+Open damp.acme.dev (http + https modes) to check it out.
 
 Further details can be found here: https://github.com/acme101/dev-setup/blob/master/README.md
 
@@ -63,13 +64,13 @@ $ cd workspace/damp-starter
 $ docker-compose -f docker-compose.prod.yml up -d 
 ```
 
-Open dev.damp.acme.dev (http + https modes) to check it out.
+Open damp.acme.prod (http + https modes) to check it out.
 
 ## Tips
 
-To view logs
+To view logs on current processing container:
 
 ```
-$ docker-compose up -d && docker-compose logs -f
+$ docker-compose logs -f
 ```
 

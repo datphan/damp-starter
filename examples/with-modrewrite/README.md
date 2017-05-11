@@ -1,7 +1,7 @@
 ## Getting started
 
 ```
-$ git clone <this>
+$ git clone git@github.com:acme101/damp-starter.git
 $ cd damp-starter
 $ cp ./examples/with-modrewrite/src/* ./src
 $ docker-compose up -d

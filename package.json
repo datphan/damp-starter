@@ -1,0 +1,12 @@
+{
+  "name": "docker-apache-mysql-php-starter",
+  "version": "1.0.0",
+  "description": "Docker with Apacha Mysql Php pre-installed",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}

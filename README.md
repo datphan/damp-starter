@@ -1,4 +1,4 @@
-# Fast Install
+# Getting Started
 
 With `docker` pre-installed:
 
@@ -10,6 +10,12 @@ $ docker-compose up -d
 Then go to `localhost` and enjoy!
 
 *Note*: for those who use `nginx` insted of `apache`, check out [demp-starter](https://github.com/acme101/demp-starter).
+
+- CI/CD with gitlab-ci: https://gitlab.com/acme101/damp-starter/pipelines
+- CI/CD with travis-ci: https://travis-ci.org/acme101/damp-starter/builds
+
+- Auto deployment to Heroku: https://damp-staging.herokuapp.com/
+- Auto deployment to GKE with terapp.com domain A record: https://damp-staging.terapp.com/
 
 ## Higher Usage for better team collaboration and consistent dev environment
 

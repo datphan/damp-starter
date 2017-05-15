@@ -12,8 +12,10 @@ services:
 
   dev:
     build: .
+    image: ${DOCKER_IMAGE_DEV_PROD:-damp-starter}
     ports:
       - "80:80"
+
     volumes:
       - ./src:/var/www/html
 
@@ -22,5 +24,6 @@ services:
 
     depends_on:
       - mysqldb
+
 
     

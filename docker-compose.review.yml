@@ -1,15 +1,15 @@
 version: '3'
 
 services:
-  prod:
-    build: .
+  review:
+    image: ${DOCKER_IMAGE_REVIEW}
     ports:
       - "80:80"
     volumes:
       - ./src:/var/www/html
 
     environment:
-      VIRTUAL_HOST: damp.acme.prod
+      VIRTUAL_HOST: damp.acme.review
 
     depends_on:
       - mysqldb

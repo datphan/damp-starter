@@ -1,11 +1,11 @@
 <?php
-  $mysql_host = 'mysqldb';
+  $mysql_host = getenv('MYSQL_HOST');
   $mysql_user = 'root';
   $mysql_password = 'root';
 
   // Create connection
   $conn = new mysqli($mysql_host, $mysql_user, $mysql_password);
-  echo 'Connected with ' . $conn->host_info;
+  echo '<p style="text-align: center;">Connected with ' . $conn->host_info . '</p>';
 
   // Check connection
   if ($conn->connect_error) {
@@ -13,13 +13,6 @@
   }
 
   $conn->close();
+
+  phpinfo(); 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>DAMP: LAMP stack example</title>
-</head>
-<body>
-  <h1>Hello world!</h1>
-</body>
-</html>

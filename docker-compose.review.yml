@@ -9,7 +9,7 @@ services:
       - ./src:/var/www/html
 
     environment:
-      VIRTUAL_HOST: damp.acme.review
+      VIRTUAL_HOST: ${VIRTUAL_HOST_REVIEW}
 
     depends_on:
       - mysqldb

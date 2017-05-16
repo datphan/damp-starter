@@ -3,13 +3,21 @@
 With `docker` pre-installed:
 
 ```
-$ git fetch <repo-url>
+$ git fetch <repo-url> damp-starter
+$ cd damp-starter
 $ docker-compose up -d
 ```
 
-Then go to `localhost` and enjoy!
+Then go to `http://localhost` and enjoy!
+
+To access `phpmyadmin` go to `http://localhost:8080` with user `root` and password `root`.
+
+To config `mysql` username and password, edit `.env` file.
+
+*Note*: default `hostname` is not `localhost`, in this example it is `'mysqldb'` or `getenv('MYSQL_HOST')`, check `./src/index.php` for more infomation.
 
 *Note*: for those who use `nginx` insted of `apache`, check out [demp-starter](https://github.com/acme101/demp-starter).
+
 
 - CI/CD with gitlab-ci: https://gitlab.com/acme101/damp-starter/pipelines
 - CI/CD with travis-ci: https://travis-ci.org/acme101/damp-starter/builds
@@ -19,7 +27,7 @@ Then go to `localhost` and enjoy!
 
 ## Higher Usage for better team collaboration and consistent dev environment
 
-This works on both window, mac, linux:
+This works on both mac, linux or window:
 
 ```
 $ cd ~/
@@ -58,7 +66,7 @@ $ cd workspace/damp-starter
 $ docker-compose up -d
 ```
 
-Open damp.acme.dev (http + https modes) to check it out.
+Open http://damp.acme.dev (http + https modes) to check it out.
 
 Further details can be found here: https://github.com/acme101/dev-setup/blob/master/README.md
 
@@ -77,7 +85,7 @@ $ export DOCKER_IMAGE_REVIEW=registry.gitlab.com/foouser/damp-starter:features-1
 $ docker-compose -f docker-compose.yml -f docker-compose.review.yml up -d review
 ```
 
-Open damp.acme.review (http + https modes) to check it out.
+Open http://damp.acme.review (http + https modes) to check it out.
 
 ## Tips
 

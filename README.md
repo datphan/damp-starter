@@ -62,7 +62,9 @@ $ vagrant up
 $ vagrant hostmanager
 $ vagrant ssh
 $ docker rm nginx-proxy -f
-$ cd workspace/damp-starter
+$ cd workspace
+$ git fetch <repo-url> damp-starter
+$ cd damp-starter
 $ docker-compose up -d
 ```
 

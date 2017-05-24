@@ -80,7 +80,7 @@ after_success:
   fi
 - if [[ "$TRAVIS_BRANCH" == "master" ]] || [[ "$TRAVIS_BRANCH" == "develop" ]]; then
     sh scripts/deploy_gcp.sh;
-    docker login -u "$HEROKU_USER_NAME" -p "$HEROKU_API_KEY" $HEROKU_REGISTRY;
-    sh scripts/deploy_heroku.sh;
+    # docker login -u "$HEROKU_USER_NAME" -p "$HEROKU_API_KEY" $HEROKU_REGISTRY;
+    # sh scripts/deploy_heroku.sh;
   fi
 - rm -rf /tmp/gcp_key_file.json

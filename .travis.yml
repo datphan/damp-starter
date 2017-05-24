@@ -61,8 +61,6 @@ after_success:
     export HELM_IMAGE_PULL_POLICY=Always;
     export HELM_IMAGE_LAST_DEPLOYED=$(date -u +"%Y-%m-%dT%H:%M:%SZ");
     export DOCKER_IMAGE=$DOCKER_IMAGE_DEV_PROD;
-    export HEROKU_IMAGE=$HEROKU_REGISTRY/$HEROKU_APP_NAME_STAGING/web;
-    export HEROKU_API_KEY=$HEROKU_API_KEY_STAGING;
   fi
 - if [[ "$TRAVIS_BRANCH" == "master" ]]; then
     export GCP_PROJECT_ID=$GCP_PROJECT_ID_PROD;
@@ -75,8 +73,6 @@ after_success:
     export HELM_IMAGE_PULL_POLICY=Always;
     export HELM_IMAGE_LAST_DEPLOYED=$(date -u +"%Y-%m-%dT%H:%M:%SZ");
     export DOCKER_IMAGE=$DOCKER_IMAGE_DEV_PROD;
-    export HEROKU_IMAGE=$HEROKU_REGISTRY/$HEROKU_APP_NAME_PROD/web;
-    export HEROKU_API_KEY=$HEROKU_API_KEY_PROD;
   fi
 - if [[ "$TRAVIS_BRANCH" == "master" ]] || [[ "$TRAVIS_BRANCH" == "develop" ]]; then
     sh scripts/deploy_gcp.sh;

@@ -22,7 +22,7 @@ gcloud config list
 
 gcloud container clusters list
 
-gcloud container clusters get-credentials staging
+gcloud config set container/use_client_certificate True
 
 # for GKE
 gcloud container clusters get-credentials $GCP_CLUSTER_NAME --zone $GCP_ZONE --project $GCP_PROJECT_ID

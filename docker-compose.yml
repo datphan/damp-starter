@@ -7,10 +7,14 @@ services:
     ports:
       - "6603:3306"
 
+    volumes:
+      - mysql_data:/var/lib/mysql
+
     environment:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      ALLOW_EMPTY_PASSWORD: "yes"
 
   phpmyadmin:
     image: "phpmyadmin/phpmyadmin:latest"
@@ -42,5 +46,7 @@ services:
     depends_on:
       - ${MYSQL_HOST}
 
-
+volumes:
+  mysql_data:
+    driver: local
     

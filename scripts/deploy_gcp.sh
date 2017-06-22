@@ -22,6 +22,8 @@ gcloud config list
 
 gcloud container clusters list
 
+gcloud container clusters get-credentials staging
+
 # for GKE
 gcloud container clusters get-credentials $GCP_CLUSTER_NAME --zone $GCP_ZONE --project $GCP_PROJECT_ID
 

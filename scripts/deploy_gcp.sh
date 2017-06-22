@@ -17,6 +17,8 @@ gcloud config set compute/zone $GCP_ZONE
 #gcloud app deploy --image-url=$GCP_IMAGE --project $GCP_PROJECT_ID --quiet
 #gcloud --verbosity debug app deploy app.yaml --image-url $GCP_IMAGE --stop-previous-version --quiet
 
+gcloud config list
+
 # for GKE
 gcloud container clusters get-credentials $GCP_CLUSTER_NAME --zone $GCP_ZONE --project $GCP_PROJECT_ID
 

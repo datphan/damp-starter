@@ -12,6 +12,7 @@ gcloud docker -a
 
 gcloud config set project $GCP_PROJECT_ID
 gcloud config set compute/zone $GCP_ZONE
+gcloud config set compute/region $GCP_REGION
 
 # for GAE
 #gcloud app deploy --image-url=$GCP_IMAGE --project $GCP_PROJECT_ID --quiet

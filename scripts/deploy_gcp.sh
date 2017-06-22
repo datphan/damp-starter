@@ -20,6 +20,8 @@ gcloud config set compute/region $GCP_REGION
 
 gcloud config list
 
+gcloud container clusters list
+
 # for GKE
 gcloud container clusters get-credentials $GCP_CLUSTER_NAME --zone $GCP_ZONE --project $GCP_PROJECT_ID
 

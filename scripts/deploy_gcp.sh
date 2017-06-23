@@ -24,6 +24,8 @@ gcloud container clusters list
 
 gcloud config set container/use_client_certificate True
 
+gcloud auth list
+
 # for GKE
 gcloud container clusters get-credentials $GCP_CLUSTER_NAME --zone $GCP_ZONE --project $GCP_PROJECT_ID
 

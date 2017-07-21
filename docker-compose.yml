@@ -46,6 +46,14 @@ services:
     depends_on:
       - ${MYSQL_HOST}
 
+  composer:
+    image: "composer:latest"
+
+    command: update
+
+    volumes:
+      - ./src:/app/
+
 volumes:
   mysql_data:
     driver: local

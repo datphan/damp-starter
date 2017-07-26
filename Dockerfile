@@ -6,4 +6,4 @@ RUN docker-php-ext-install mysqli
 
 RUN a2enmod rewrite
 
-ADD ./php.ini /usr/local/etc/php/php.ini
+ADD ./config/ /usr/local/etc/php/

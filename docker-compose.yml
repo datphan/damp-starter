@@ -20,7 +20,7 @@ services:
     image: "phpmyadmin/phpmyadmin:latest"
 
     ports:
-      - "8080:80"
+      - "8080:${PORT}"
 
     environment:
       PMA_HOST: ${MYSQL_HOST}
@@ -28,13 +28,21 @@ services:
     links:
       - ${MYSQL_HOST}
 
+  composer:
+    image: "composer:latest"
+
+    command: update
+
+    volumes:
+      - ./src:/app/
+
   dev:
     build: .
 
     image: ${DOCKER_IMAGE_DEV_PROD:-damp-starter}
 
     ports:
-      - "80:80"
+      - "${PORT}:${PORT}"
 
     volumes:
       - ./src:/var/www/html
@@ -45,14 +53,7 @@ services:
 
     depends_on:
       - ${MYSQL_HOST}
-
-  composer:
-    image: "composer:latest"
-
-    command: update
-
-    volumes:
-      - ./src:/app/
+      - composer
 
 volumes:
   mysql_data:

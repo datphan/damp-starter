@@ -42,7 +42,7 @@ services:
     image: ${DOCKER_IMAGE_DEV_PROD:-damp-starter}
 
     ports:
-      - "80:${PORT:-80}"
+      - "${PORT:-80}:${PORT:-80}"
 
     volumes:
       - ./src:/var/www/html

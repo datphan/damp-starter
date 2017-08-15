@@ -19,8 +19,7 @@ services:
   phpmyadmin:
     image: "phpmyadmin/phpmyadmin:latest"
 
-    ports:
-      - "8080:${PORT:-80}"
+   
 
     environment:
       PMA_HOST: ${MYSQL_HOST}
@@ -41,8 +40,6 @@ services:
 
     image: ${DOCKER_IMAGE_DEV_PROD:-damp-starter}
 
-    ports:
-      - "${PORT:-80}:${PORT:-80}"
 
     volumes:
       - ./src:/var/www/html

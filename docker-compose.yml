@@ -36,13 +36,16 @@ services:
     volumes:
       - ./src:/app/
 
+  apache:
+    image: "httpd:latest"
+
   dev:
     build: .
 
     image: ${DOCKER_IMAGE_DEV_PROD:-damp-starter}
 
     ports:
-      - "${PORT}:${PORT}"
+      - "80:${PORT}"
 
     volumes:
       - ./src:/var/www/html

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$PORT" ]; then
-  export PORT=80;
+  export PORT=81;
 fi
 
 envsubst '${PORT}' < /etc/apache2/sites-enabled/000-default.tpl.conf > /etc/apache2/sites-enabled/000-default.conf

@@ -9,3 +9,5 @@ RUN a2enmod rewrite
 ADD ./config/ /usr/local/etc/php/
 
 RUN apt-get update && apt-get install -y gettext --no-install-recommends
+
+CMD ["sh", "run-dev.sh"]

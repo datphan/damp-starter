@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PORT=8080;
+
 if [ -z "$PORT" ]; then
   export PORT=81;
 fi

@@ -20,7 +20,7 @@ services:
     image: "phpmyadmin/phpmyadmin:latest"
 
     ports:
-      - "8080:${PORT}"
+      - "8080:80"
 
     environment:
       PMA_HOST: ${MYSQL_HOST}
@@ -45,10 +45,17 @@ services:
     image: ${DOCKER_IMAGE_DEV_PROD:-damp-starter}
 
     ports:
-      - "80:${PORT}"
+      - "80:80"
 
     volumes:
       - ./src:/var/www/html
+      - ./run-dev.sh:/opt/app/run-dev.sh
+      - ./config/apache2/ports.tpl.conf:/etc/apache2/ports.tpl.conf
+      - ./config/apache2/sites-enabled/000-default.tpl.conf:/etc/apache2/sites-enabled/000-default.tpl.conf
+
+    working_dir: /opt/app
+
+    command: sh run-dev.sh
 
     environment:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
